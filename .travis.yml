@@ -1,0 +1,22 @@
+language: generic
+dist: xenial
+
+jobs:
+  include:
+    - stage: deploy
+      if: branch = master
+      install:
+        - wget -O /tmp/hugo.deb https://github.com/gohugoio/hugo/releases/download/v0.57.2/hugo_0.57.2_Linux-64bit.deb
+        - sudo dpkg -i /tmp/hugo.deb
+      script:
+        - hugo
+      deploy:
+        provider: surge
+        project: ./public/
+        domain: cookieshake.blog
+        skip_cleanup: true
+
+
+
+
+
