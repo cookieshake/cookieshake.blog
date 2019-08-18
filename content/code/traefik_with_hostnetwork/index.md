@@ -2,6 +2,7 @@
 title: "traefik helm 설치 시 hostPort가 동작하지 않을 때"
 date: 2019-08-18T21:03:31+09:00
 draft: false
+noSummary: true
 
 categories: ['Code', 'Solution']
 tags: ['kubernetes', 'k8s', 'traefik', 'helm', 'CNI']
