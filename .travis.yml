@@ -1,5 +1,11 @@
-language: generic
-dist: xenial
+language: go
+dist: bionic
+
+go:
+  - 1.12.x
+
+env:
+  - GO111MODULE=on
 
 jobs:
   include:
