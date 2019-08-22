@@ -6,10 +6,10 @@ jobs:
     - stage: deploy
       if: branch = master
       install:
-        - wget -O /tmp/hugo.deb https://github.com/gohugoio/hugo/releases/download/v0.57.2/hugo_0.57.2_Linux-64bit.deb
+        - wget -O /tmp/hugo.deb https://github.com/gohugoio/hugo/releases/download/v0.57.1/hugo_0.57.1_Linux-64bit.deb
         - sudo dpkg -i /tmp/hugo.deb
       script:
-        - hugo
+        - hugo -b https://cookieshake.blog/
       deploy:
         provider: surge
         project: ./public/
