@@ -6,8 +6,9 @@ jobs:
     - stage: deploy
       if: branch = master
       install:
-        - wget -O /tmp/hugo.deb https://github.com/gohugoio/hugo/releases/download/v0.57.1/hugo_0.57.1_Linux-64bit.deb
-        - sudo dpkg -i /tmp/hugo.deb
+        - git clone https://github.com/gohugoio/hugo.git
+        - cd hugo
+        - go install --tags extended
       script:
         - hugo -b https://cookieshake.blog/
       deploy:
